@@ -11,7 +11,8 @@ export default function PersonalInformationForm({
     phone number
    */
   return (
-    <fieldset>
+    <form>
+      <fieldset>
       <legend>Personal Information</legend>
       <FormField name="name" label="Name" value={personalInformation.name} />
       <FormField
@@ -31,6 +32,7 @@ export default function PersonalInformationForm({
         <button type="button" onClick={handleSave}>
           Save
         </button>
-    </fieldset>
+      </fieldset>
+    </form>
   );
 }
