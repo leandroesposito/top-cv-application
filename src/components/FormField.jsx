@@ -9,7 +9,7 @@ export default function FormField({
 }) {
   return (
     <div className={`form-field ${direction}`}>
-      <label for={name}>{label}: </label>
+      <label htmlFor={name}>{label}: </label>
       <input
         type={type}
         name={name}
