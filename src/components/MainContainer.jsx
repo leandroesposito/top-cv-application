@@ -17,7 +17,9 @@ export default function MainContainer() {
     position title
     main responsibilities of your jobs
     date from and until
-   */
+  */
+
+  const [editPersonalInformation, setEditPersonalInformation] = useState(true);
 
   const [personalInformation, setPersonalInformation] = useState({
     name: "John Doe",
@@ -36,14 +38,19 @@ export default function MainContainer() {
     };
 
     setPersonalInformation(newPersonalInformation);
+    setEditPersonalInformation(false);
   }
 
   return (
     <main>
+      {editPersonalInformation === true ? (
         <PersonalInformationForm
           handleSave={handlePersonalInformationSave}
           personalInformation={personalInformation}
         />
+      ) : (
+        <button onClick={() => setEditPersonalInformation(true)}>Edit</button>
+      )}
     </main>
   );
 }
