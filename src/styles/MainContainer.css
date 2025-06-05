@@ -1,0 +1,10 @@
+main {
+  width: min(80%, 1280px);
+  min-height: 50vh;
+  padding: 4rem;
+  background-color: white;
+  margin: 4rem 0;
+  justify-self: center;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgb(182, 182, 182);
+}
