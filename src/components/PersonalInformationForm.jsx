@@ -31,7 +31,9 @@ export default function PersonalInformationForm({
   return (
     <form>
       <fieldset>
-        <legend>Personal Information</legend>
+        <legend>
+          <h2>Personal Information</h2>
+        </legend>
         <FormField
           name="name"
           label="Name"
