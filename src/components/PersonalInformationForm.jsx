@@ -1,6 +1,9 @@
 import FormField from "./FormField.jsx";
 
-export default function PersonalInformationForm({ personalInformation = {} }) {
+export default function PersonalInformationForm({
+  handleSave,
+  personalInformation = {},
+}) {
   /**
    Personal information
     name
@@ -25,6 +28,9 @@ export default function PersonalInformationForm({ personalInformation = {} }) {
         type="tel"
         placeholder="555-555-555"
       />
+        <button type="button" onClick={handleSave}>
+          Save
+        </button>
     </fieldset>
   );
 }

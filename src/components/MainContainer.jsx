@@ -1,5 +1,6 @@
 import "../styles/MainContainer.css";
 import PersonalInformationForm from "./PersonalInformationForm.jsx";
+import { useState } from "react";
 
 export default function MainContainer() {
   /**
@@ -18,15 +19,31 @@ export default function MainContainer() {
     date from and until
    */
 
-  const personalInformation = {
+  const [personalInformation, setPersonalInformation] = useState({
     name: "John Doe",
     email: "John@Doe.com",
     phone: "123-456-789",
-  };
+  });
+
+  function handlePersonalInformationSave(event) {
+    const form = event.target.closest("form");
+    const formData = new FormData(form);
+
+    const newPersonalInformation = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+    };
+
+    setPersonalInformation(newPersonalInformation);
+  }
 
   return (
     <main>
-      <PersonalInformationForm personalInformation={personalInformation} />
+        <PersonalInformationForm
+          handleSave={handlePersonalInformationSave}
+          personalInformation={personalInformation}
+        />
     </main>
   );
 }
