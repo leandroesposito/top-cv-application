@@ -5,6 +5,7 @@ export default function FormField({
   type = "text",
   placeholder = null,
   value = null,
+  onChange,
 }) {
   return (
     <div className={`form-field ${direction}`}>
@@ -15,6 +16,7 @@ export default function FormField({
         id={name}
         placeholder={placeholder}
         value={value}
+        onChange={onChange}
       />
     </div>
   );
