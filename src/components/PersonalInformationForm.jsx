@@ -1,5 +1,6 @@
 import FormField from "./FormField.jsx";
 import { useState } from "react";
+import "../styles/Form.css";
 
 export default function PersonalInformationForm({
   handleSave,

@@ -1,0 +1,53 @@
+fieldset {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 2px solid rgb(224, 224, 224);
+  border-radius: 1rem;
+}
+
+.form-field {
+  display: flex;
+  gap: 1rem;
+}
+
+.row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+label {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.form-field.row label {
+  flex: 0 0 10rem;
+}
+
+.form-field.row input,
+button {
+  font-style: inherit;
+  font-size: inherit;
+  padding: 0.5rem;
+  border: 2px solid rgb(224, 224, 224);
+  border-radius: 0.5rem;
+  flex: 1;
+}
+
+button {
+  align-self: center;
+  padding: 0.5rem 2rem;
+  box-shadow: 5px 5px black;
+}
+
+button:active {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+}
