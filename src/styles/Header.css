@@ -1,6 +1,6 @@
 header {
   padding: 1rem 3rem;
-  background-color: cornflowerblue;
+  background: linear-gradient(175deg, cornflowerblue, rgb(100, 114, 237));
 }
 
 header h1 {
