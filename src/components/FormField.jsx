@@ -1,11 +1,12 @@
 export default function FormField({
   name,
   label,
+  onChange,
   direction = "row",
   type = "text",
   placeholder = null,
   value = null,
-  onChange,
+  ...params
 }) {
   return (
     <div className={`form-field ${direction}`}>
@@ -17,6 +18,7 @@ export default function FormField({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        {...params}
       />
     </div>
   );
