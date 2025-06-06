@@ -3,7 +3,7 @@ fieldset {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  border: 2px solid rgb(224, 224, 224);
+  border: 2px solid hsl(234, 79%, 85%);
   border-radius: 1rem;
 }
 
@@ -36,7 +36,8 @@ button {
   font-style: inherit;
   font-size: inherit;
   padding: 0.5rem;
-  border: 2px solid rgb(224, 224, 224);
+  border: 2px solid hsl(234, 79%, 66%);
+  border-image-slice: 1;
   border-radius: 0.5rem;
   flex: 1;
 }
@@ -44,7 +45,7 @@ button {
 button {
   align-self: center;
   padding: 0.5rem 2rem;
-  box-shadow: 5px 5px black;
+  box-shadow: 5px 5px hsl(234, 50%, 40%);
   margin-top: 2rem;
 }
 
