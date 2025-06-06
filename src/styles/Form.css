@@ -46,7 +46,7 @@ button {
   align-self: center;
   padding: 0.5rem 2rem;
   box-shadow: 5px 5px hsl(234, 50%, 40%);
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 button:active {
