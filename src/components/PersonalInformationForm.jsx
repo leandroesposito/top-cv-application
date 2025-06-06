@@ -38,13 +38,13 @@ export default function PersonalInformationForm({
         <FormField
           name="name"
           label="Name"
-          value={formData.name || personalInformation.name}
+          value={formData.name ?? personalInformation.name ?? ""}
           onChange={handleChange}
         />
         <FormField
           name="email"
           label="Email"
-          value={formData.email || personalInformation.email}
+          value={formData.email ?? personalInformation.email ?? ""}
           type="email"
           placeholder="email@example.com"
           onChange={handleChange}
@@ -52,7 +52,7 @@ export default function PersonalInformationForm({
         <FormField
           name="phone"
           label="Phone number"
-          value={formData.phone || personalInformation.phone}
+          value={formData.phone ?? personalInformation.phone ?? ""}
           type="tel"
           placeholder="555-555-555"
           onChange={handleChange}
