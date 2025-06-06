@@ -1,6 +1,7 @@
 import "../styles/MainContainer.css";
 import PersonalInformationForm from "./PersonalInformationForm.jsx";
 import PersonalInformationViewer from "./PersonalInformationViewer.jsx";
+import EducationalInformationForm from "./EducationalInformationForm.jsx";
 import { useState } from "react";
 
 export default function MainContainer() {
@@ -55,6 +56,7 @@ export default function MainContainer() {
           personalInformation={personalInformation}
         />
       )}
+      <EducationalInformationForm />
     </main>
   );
 }
