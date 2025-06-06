@@ -1,0 +1,15 @@
+.personal-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.personal-information h2 {
+  align-self: start;
+}
+
+.personal-information .name {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 1rem;
+}

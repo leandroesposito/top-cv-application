@@ -1,5 +1,6 @@
 import "../styles/MainContainer.css";
 import PersonalInformationForm from "./PersonalInformationForm.jsx";
+import PersonalInformationViewer from "./PersonalInformationViewer.jsx";
 import { useState } from "react";
 
 export default function MainContainer() {
@@ -49,7 +50,10 @@ export default function MainContainer() {
           personalInformation={personalInformation}
         />
       ) : (
-        <button onClick={() => setEditPersonalInformation(true)}>Edit</button>
+        <PersonalInformationViewer
+          handleEdit={() => setEditPersonalInformation(true)}
+          personalInformation={personalInformation}
+        />
       )}
     </main>
   );
