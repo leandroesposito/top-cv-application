@@ -2,6 +2,7 @@ import "../styles/MainContainer.css";
 import PersonalInformationForm from "./PersonalInformationForm.jsx";
 import PersonalInformationViewer from "./PersonalInformationViewer.jsx";
 import EducationalInformationForm from "./EducationalInformationForm.jsx";
+import EducationalInformationViewer from "./EducationalInformationViewer.jsx";
 import { useState } from "react";
 
 export default function MainContainer() {
@@ -30,6 +31,8 @@ export default function MainContainer() {
   });
 
   const [educationalInformation, setEducationalInformation] = useState();
+  const [editEducationalInformation, setEditEducationalInformation] =
+    useState(true);
 
   function handlePersonalInformationSave(event) {
     const form = event.target.closest("form");
@@ -56,25 +59,23 @@ export default function MainContainer() {
     };
 
     setEducationalInformation(newEducationalInformation);
+    setEditEducationalInformation(false);
   }
 
   return (
     <main>
-      {editPersonalInformation === true ? (
-        <PersonalInformationForm
-          handleSave={handlePersonalInformationSave}
-          personalInformation={personalInformation}
-        />
-      ) : (
-        <PersonalInformationViewer
-          handleEdit={() => setEditPersonalInformation(true)}
-          personalInformation={personalInformation}
-        />
-      )}
-      <EducationalInformationForm
-        handleSave={handleEducationalInformationSave}
-        educationalInformation={educationalInformation}
-      />
+        <h2 className="section-title">Education</h2>
+        {editEducationalInformation === true ? (
+          <EducationalInformationForm
+            handleSave={handleEducationalInformationSave}
+            educationalInformation={educationalInformation}
+          />
+        ) : (
+          <EducationalInformationViewer
+            handleEdit={() => setEditEducationalInformation(true)}
+            educationalInformation={educationalInformation}
+          />
+        )}
     </main>
   );
 }
