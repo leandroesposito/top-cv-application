@@ -64,6 +64,20 @@ export default function MainContainer() {
 
   return (
     <main>
+      <section>
+        {editPersonalInformation === true ? (
+          <PersonalInformationForm
+            handleSave={handlePersonalInformationSave}
+            personalInformation={personalInformation}
+          />
+        ) : (
+          <PersonalInformationViewer
+            handleEdit={() => setEditPersonalInformation(true)}
+            personalInformation={personalInformation}
+          />
+        )}
+      </section>
+      <section>
         <h2 className="section-title">Education</h2>
         {editEducationalInformation === true ? (
           <EducationalInformationForm
@@ -76,6 +90,7 @@ export default function MainContainer() {
             educationalInformation={educationalInformation}
           />
         )}
+      </section>
     </main>
   );
 }
