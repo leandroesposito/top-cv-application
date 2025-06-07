@@ -50,6 +50,14 @@ export default function MainContainer() {
     setEditPersonalInformation(false);
   }
 
+  function generateEducationalInformationId() {
+    if (educationalInformation.length > 0) {
+      return educationalInformation[educationalInformation.length - 1].id + 1;
+    }
+
+    return 0;
+  }
+
   function handleEducationalInformationSave(event) {
     const form = event.target.closest("form");
     const formData = new FormData(form);
@@ -67,6 +75,12 @@ export default function MainContainer() {
       )
     );
     setEditEducationalInformationId(-1);
+  }
+
+  function handleAddEducation() {
+    const newItemId = generateEducationalInformationId();
+    setEducationalInformation([...educationalInformation, { id: newItemId }]);
+    setEditEducationalInformationId(newItemId);
   }
 
   return (
@@ -101,6 +115,7 @@ export default function MainContainer() {
             />
           )
         )}
+        <button onClick={handleAddEducation}>Add education</button>
       </section>
     </main>
   );
