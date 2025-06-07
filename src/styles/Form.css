@@ -7,6 +7,10 @@ fieldset {
   border-radius: 1rem;
 }
 
+legend {
+  color: hsl(234, 50%, 40%);
+}
+
 .form-field {
   display: flex;
   gap: 1rem;
@@ -25,6 +29,7 @@ fieldset {
 label {
   font-weight: 500;
   font-size: 1.2rem;
+  color: hsl(234, 50%, 40%);
 }
 
 .form-field.row label {
@@ -47,6 +52,13 @@ button {
   padding: 0.5rem 2rem;
   box-shadow: 5px 5px hsl(234, 50%, 40%);
   margin-top: 1rem;
+  color: hsl(234, 50%, 40%);
+  cursor: pointer;
+}
+
+button:hover {
+  transition: transform 0.1s;
+  transform: scale(1.1);
 }
 
 button:active {
