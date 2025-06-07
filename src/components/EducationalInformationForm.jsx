@@ -56,6 +56,7 @@ export default function EducationalInformationForm({
           min="1950"
           max={new Date().getFullYear()}
         />
+        <input type="hidden" value={educationalInformation?.id} name="id" />
         <button type="button" onClick={handleSave}>
           Save
         </button>
