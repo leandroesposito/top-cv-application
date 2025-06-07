@@ -14,8 +14,10 @@ export default function EducationalInformationViewer({
       <div className="educational-item finish-year">
         {educationalInformation.finishYear}
       </div>
+      <div className="buttons-container">
         <button onClick={handleEdit}>Edit</button>
         <button onClick={handleDelete}>Delete</button>
+      </div>
     </div>
   );
 }

@@ -58,10 +58,12 @@ export default function EducationalInformationForm({
           max={new Date().getFullYear()}
         />
         <input type="hidden" value={educationalInformation?.id} name="id" />
+        <div className="buttons-container">
           <button type="button" onClick={handleSave}>
             Save
           </button>
           <button onClick={handleDelete}>Delete</button>
+        </div>
       </fieldset>
     </form>
   );
