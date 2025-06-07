@@ -4,6 +4,7 @@ import "../styles/Form.css";
 
 export default function EducationalInformationForm({
   handleSave,
+  handleDelete,
   educationalInformation = {},
 }) {
   /**
@@ -57,9 +58,10 @@ export default function EducationalInformationForm({
           max={new Date().getFullYear()}
         />
         <input type="hidden" value={educationalInformation?.id} name="id" />
-        <button type="button" onClick={handleSave}>
-          Save
-        </button>
+          <button type="button" onClick={handleSave}>
+            Save
+          </button>
+          <button onClick={handleDelete}>Delete</button>
       </fieldset>
     </form>
   );

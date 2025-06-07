@@ -77,6 +77,15 @@ export default function MainContainer() {
     setEditEducationalInformationId(-1);
   }
 
+  function handleEducationalInformationDelete(id) {
+    setEducationalInformation(
+      educationalInformation.filter((eu) => eu.id !== id)
+    );
+    setEditEducationalInformationId(
+      id === editEducationalInformationId ? -1 : editEducationalInformationId
+    );
+  }
+
   function handleAddEducation() {
     const newItemId = generateEducationalInformationId();
     setEducationalInformation([...educationalInformation, { id: newItemId }]);
@@ -104,12 +113,14 @@ export default function MainContainer() {
           eu.id === editEducationalInformationId ? (
             <EducationalInformationForm
               handleSave={handleEducationalInformationSave}
+              handleDelete={() => handleEducationalInformationDelete(eu.id)}
               educationalInformation={eu}
               key={eu.id}
             />
           ) : (
             <EducationalInformationViewer
               handleEdit={() => setEditEducationalInformationId(eu.id)}
+              handleDelete={() => handleEducationalInformationDelete(eu.id)}
               educationalInformation={eu}
               key={eu.id}
             />
