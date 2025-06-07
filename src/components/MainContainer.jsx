@@ -30,9 +30,11 @@ export default function MainContainer() {
     phone: "123-456-789",
   });
 
-  const [educationalInformation, setEducationalInformation] = useState();
-  const [editEducationalInformation, setEditEducationalInformation] =
-    useState(true);
+  const [educationalInformation, setEducationalInformation] = useState([
+    { id: 0 },
+  ]);
+  const [editEducationalInformationId, setEditEducationalInformationId] =
+    useState(0);
 
   function handlePersonalInformationSave(event) {
     const form = event.target.closest("form");
@@ -56,10 +58,15 @@ export default function MainContainer() {
       schoolName: formData.get("schoolName"),
       title: formData.get("title"),
       finishYear: formData.get("finishYear"),
+      id: parseInt(formData.get("id")),
     };
 
-    setEducationalInformation(newEducationalInformation);
-    setEditEducationalInformation(false);
+    setEducationalInformation(
+      educationalInformation.map((eu) =>
+        eu.id === editEducationalInformationId ? newEducationalInformation : eu
+      )
+    );
+    setEditEducationalInformationId(-1);
   }
 
   return (
@@ -79,16 +86,20 @@ export default function MainContainer() {
       </section>
       <section>
         <h2 className="section-title">Education</h2>
-        {editEducationalInformation === true ? (
-          <EducationalInformationForm
-            handleSave={handleEducationalInformationSave}
-            educationalInformation={educationalInformation}
-          />
-        ) : (
-          <EducationalInformationViewer
-            handleEdit={() => setEditEducationalInformation(true)}
-            educationalInformation={educationalInformation}
-          />
+        {educationalInformation.map((eu) =>
+          eu.id === editEducationalInformationId ? (
+            <EducationalInformationForm
+              handleSave={handleEducationalInformationSave}
+              educationalInformation={eu}
+              key={eu.id}
+            />
+          ) : (
+            <EducationalInformationViewer
+              handleEdit={() => setEditEducationalInformationId(eu.id)}
+              educationalInformation={eu}
+              key={eu.id}
+            />
+          )
         )}
       </section>
     </main>
