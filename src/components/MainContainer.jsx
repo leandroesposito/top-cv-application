@@ -29,6 +29,8 @@ export default function MainContainer() {
     phone: "123-456-789",
   });
 
+  const [educationalInformation, setEducationalInformation] = useState();
+
   function handlePersonalInformationSave(event) {
     const form = event.target.closest("form");
     const formData = new FormData(form);
@@ -41,6 +43,19 @@ export default function MainContainer() {
 
     setPersonalInformation(newPersonalInformation);
     setEditPersonalInformation(false);
+  }
+
+  function handleEducationalInformationSave(event) {
+    const form = event.target.closest(form);
+    const formData = new FormData(form);
+
+    const newEducationalInformation = {
+      schoolName: formData.get("schoolName"),
+      title: formData.get("title"),
+      finishYear: formData.get("finishYear"),
+    };
+
+    setEducationalInformation(newEducationalInformation);
   }
 
   return (
@@ -56,7 +71,10 @@ export default function MainContainer() {
           personalInformation={personalInformation}
         />
       )}
-      <EducationalInformationForm />
+      <EducationalInformationForm
+        handleSave={handleEducationalInformationSave}
+        educationalInformation={educationalInformation}
+      />
     </main>
   );
 }
