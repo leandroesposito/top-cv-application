@@ -49,7 +49,7 @@ export default function MainContainer() {
   }
 
   function handleEducationalInformationSave(event) {
-    const form = event.target.closest(form);
+    const form = event.target.closest("form");
     const formData = new FormData(form);
 
     const newEducationalInformation = {
