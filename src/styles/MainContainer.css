@@ -7,6 +7,7 @@ main {
   justify-self: center;
   border-radius: 1rem;
   box-shadow: 0 0 10px rgb(182, 182, 182);
+  box-sizing: border-box;
 
   display: grid;
   gap: 4rem;
