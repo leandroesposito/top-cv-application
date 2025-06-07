@@ -44,11 +44,13 @@ button {
   border: 2px solid hsl(234, 79%, 66%);
   border-image-slice: 1;
   border-radius: 0.5rem;
+}
+
+.form-field input {
   flex: 1;
 }
 
 button {
-  align-self: center;
   padding: 0.5rem 2rem;
   box-shadow: 5px 5px hsl(234, 50%, 40%);
   margin-top: 1rem;
