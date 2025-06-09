@@ -37,8 +37,7 @@ label {
 }
 
 .form-field.row input,
-button {
-  font-style: inherit;
+  font-family: inherit;
   font-size: inherit;
   padding: 0.5rem;
   border: 2px solid hsl(234, 79%, 66%);
