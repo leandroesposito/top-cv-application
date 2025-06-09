@@ -3,6 +3,7 @@ import PersonalInformationForm from "./PersonalInformationForm.jsx";
 import PersonalInformationViewer from "./PersonalInformationViewer.jsx";
 import EducationalInformationForm from "./EducationalInformationForm.jsx";
 import EducationalInformationViewer from "./EducationalInformationViewer.jsx";
+import ExperienceForm from "./ExperienceForm.jsx";
 import { useState } from "react";
 
 export default function MainContainer() {
@@ -36,6 +37,9 @@ export default function MainContainer() {
   const [editEducationalInformationId, setEditEducationalInformationId] =
     useState(0);
 
+  const [experience, setExperience] = useState([{ id: 0 }]);
+  const [editExperienceId, setEditExperienceId] = useState(0);
+
   function handlePersonalInformationSave(event) {
     const form = event.target.closest("form");
     const formData = new FormData(form);
@@ -50,9 +54,9 @@ export default function MainContainer() {
     setEditPersonalInformation(false);
   }
 
-  function generateEducationalInformationId() {
-    if (educationalInformation.length > 0) {
-      return educationalInformation[educationalInformation.length - 1].id + 1;
+  function generateNewIdFor(array) {
+    if (array.length > 0) {
+      return array[array.length - 1].id + 1;
     }
 
     return 0;
@@ -87,9 +91,39 @@ export default function MainContainer() {
   }
 
   function handleAddEducation() {
-    const newItemId = generateEducationalInformationId();
+    const newItemId = generateNewIdFor(educationalInformation);
     setEducationalInformation([...educationalInformation, { id: newItemId }]);
     setEditEducationalInformationId(newItemId);
+  }
+
+  function handleExperienceSave(event) {
+    const form = event.target.closest("form");
+    const formData = new FormData(form);
+
+    const newExperience = {
+      companyName: formData.get("companyName"),
+      positionTitle: formData.get("positionTitle"),
+      mainResponsabilities: formData.get("mainResponsabilities"),
+      dateFrom: formData.get("dateFrom"),
+      dateUntil: formData.get("dateUntil"),
+      id: formData.get("id"),
+    };
+
+    setExperience(
+      experience.map((e) => (e.id === editExperienceId ? newExperience : e))
+    );
+    setEditExperienceId(-1);
+  }
+
+  function handleExperienceDelete(id) {
+    setExperience(experience.filter((e) => e.id !== id));
+    setEditExperienceId(id === editExperienceId ? -1 : editExperienceId);
+  }
+
+  function handleAddExperience() {
+    const newItemId = generateNewIdFor(experience);
+    setExperience([...experience, { id: newItemId }]);
+    setEditExperienceId(newItemId);
   }
 
   return (
@@ -127,6 +161,15 @@ export default function MainContainer() {
           )
         )}
         <button onClick={handleAddEducation}>Add education</button>
+      </section>
+      <section>
+        <h2 className="section-title">Experience</h2>
+        <ExperienceForm
+          handleSave={handleExperienceSave}
+          handleDelete={handleExperienceDelete}
+          experienceInformation={experience}
+        />
+        <button onClick={handleAddExperience}>Add experience</button>
       </section>
     </main>
   );
