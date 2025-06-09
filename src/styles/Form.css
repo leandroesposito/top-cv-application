@@ -37,6 +37,8 @@ label {
 }
 
 .form-field.row input,
+button,
+textarea {
   font-family: inherit;
   font-size: inherit;
   padding: 0.5rem;
@@ -45,8 +47,13 @@ label {
   border-radius: 0.5rem;
 }
 
-.form-field input {
+.form-field input,
+.form-field textarea {
   flex: 1;
+}
+
+.form-field textarea {
+  flex-basis: 20rem;
 }
 
 button {
@@ -63,6 +70,7 @@ button:hover {
 }
 
 button:active {
-  transform: translate(5px, 5px);
+  transition: transform 0.1s;
+  transform: scale(1.1) translate(5px, 5px);
   box-shadow: none;
 }
