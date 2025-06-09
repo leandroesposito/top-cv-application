@@ -76,10 +76,10 @@ export default function ExperienceForm({
         />
         <FormField
           label="To"
-          name="dateTo"
+          name="dateUntil"
           onChange={handleChange}
           type="date"
-          value={formData.dateTo ?? experienceInformation.dateTo ?? ""}
+          value={formData.dateUntil ?? experienceInformation.dateUntil ?? ""}
         />
         <input type="hidden" name="id" value={experienceInformation.id} />
         <div className="buttons-container">
