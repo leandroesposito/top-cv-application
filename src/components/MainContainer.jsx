@@ -4,6 +4,7 @@ import PersonalInformationViewer from "./PersonalInformationViewer.jsx";
 import EducationalInformationForm from "./EducationalInformationForm.jsx";
 import EducationalInformationViewer from "./EducationalInformationViewer.jsx";
 import ExperienceForm from "./ExperienceForm.jsx";
+import ExperienceViewer from "./ExperienceViewer.jsx";
 import { useState } from "react";
 
 export default function MainContainer() {
@@ -164,11 +165,23 @@ export default function MainContainer() {
       </section>
       <section>
         <h2 className="section-title">Experience</h2>
-        <ExperienceForm
-          handleSave={handleExperienceSave}
-          handleDelete={handleExperienceDelete}
-          experienceInformation={experience}
-        />
+        {experience.map((e) =>
+          e.id === editExperienceId ? (
+            <ExperienceForm
+              handleSave={handleExperienceSave}
+              handleDelete={handleExperienceDelete}
+              experienceInformation={e}
+              key={e.id}
+            />
+          ) : (
+            <ExperienceViewer
+              handeEdit={() => setEditExperienceId(e.id)}
+              handleDelete={() => handleExperienceDelete(e.id)}
+              experienceInformation={e}
+              key={e.id}
+            />
+          )
+        )}
         <button onClick={handleAddExperience}>Add experience</button>
       </section>
     </main>
