@@ -175,7 +175,7 @@ export default function MainContainer() {
             />
           ) : (
             <ExperienceViewer
-              handeEdit={() => setEditExperienceId(e.id)}
+              handleEdit={() => setEditExperienceId(e.id)}
               handleDelete={() => handleExperienceDelete(e.id)}
               experienceInformation={e}
               key={e.id}
