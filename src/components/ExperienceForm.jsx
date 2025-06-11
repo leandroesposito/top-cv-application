@@ -18,7 +18,7 @@ export default function ExperienceForm({
     companyName: null,
     positionTitle: null,
     mainResponsabilities: null,
-    dateFrom: "null",
+    dateFrom: null,
     dateUntil: null,
   });
 
