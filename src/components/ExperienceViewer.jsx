@@ -9,6 +9,9 @@ export default function ExperienceViewer({
     main responsibilities of your jobs
     date from and until
    */
+  const dateFrom = new Date(experienceInformation?.dateFrom);
+  const dateUntil = new Date(experienceInformation?.dateUntil);
+
   return (
     <div className="experience-information">
       <div className="experience-item company-name">
@@ -22,10 +25,13 @@ export default function ExperienceViewer({
       </div>
       <div className="row">
         <div className="experience-item date-from">
-          {experienceInformation.dateFrom}
+          {String(dateFrom.getUTCMonth() + 1).padStart(2, "0")} /{" "}
+          {dateFrom.getUTCFullYear()}
         </div>
+        -
         <div className="experience-item date-until">
-          {experienceInformation.dateUntil}
+          {String(dateUntil.getUTCMonth() + 1).padStart(2, "0")} /{" "}
+          {dateUntil.getUTCFullYear()}
         </div>
       </div>
       <div className="buttons-container">
