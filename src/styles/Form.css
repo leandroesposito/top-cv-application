@@ -74,3 +74,9 @@ button:active {
   transform: scale(1.1) translate(5px, 5px);
   box-shadow: none;
 }
+
+@media (max-width: 500px) {
+  fieldset {
+    padding: 1rem;
+  }
+}
