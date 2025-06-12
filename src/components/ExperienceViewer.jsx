@@ -20,10 +20,7 @@ export default function ExperienceViewer({
       <div className="experience-item position-title">
         {experienceInformation.positionTitle}
       </div>
-      <div className="experience-item main-resposabilities">
-        {experienceInformation.mainResponsabilities}
-      </div>
-      <div className="row">
+      <div className="row dates">
         <div className="experience-item date-from">
           {String(dateFrom.getUTCMonth() + 1).padStart(2, "0")} /{" "}
           {dateFrom.getUTCFullYear()}
@@ -34,6 +31,12 @@ export default function ExperienceViewer({
           {dateUntil.getUTCFullYear()}
         </div>
       </div>
+      <div className="experience-item main-resposabilities">
+        {experienceInformation.mainResponsabilities.split("\n").map((r) => (
+          <div>{r}</div>
+        ))}
+      </div>
+
       <div className="buttons-container">
         <button onClick={handleEdit}>Edit</button>
         <button onClick={handleDelete}>Delete</button>
