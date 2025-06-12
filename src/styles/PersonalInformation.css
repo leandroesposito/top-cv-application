@@ -14,3 +14,8 @@
   margin: 1rem;
   color: hsl(234, 50%, 40%);
 }
+
+.personal-item {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
