@@ -1,0 +1,53 @@
+.experience-information {
+  padding-left: 2rem;
+}
+
+.company-name {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: rgb(74, 74, 74);
+  position: relative;
+}
+
+.position-title {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.dates {
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-style: italic;
+  color: hsl(234, 50%, 40%);
+}
+
+.main-resposabilities {
+  padding-left: 1.5rem;
+}
+
+.main-resposabilities > div {
+  position: relative;
+  font-weight: 300;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.company-name::before,
+.main-resposabilities > div::before {
+  content: "";
+  width: 0.4em;
+  height: 0.4em;
+  background-color: hsl(234, 79%, 66%);
+  position: absolute;
+  left: -1rem;
+  border-radius: 50%;
+}

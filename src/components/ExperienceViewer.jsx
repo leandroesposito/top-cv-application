@@ -1,3 +1,5 @@
+import "../styles/ExperienceInformation.css";
+
 export default function ExperienceViewer({
   handleEdit,
   handleDelete,
