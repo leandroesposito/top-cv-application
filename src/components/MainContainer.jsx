@@ -33,13 +33,58 @@ export default function MainContainer() {
   });
 
   const [educationalInformation, setEducationalInformation] = useState([
-    { id: 0 },
+    {
+      schoolName: "University of The Odin Project",
+      title: "Degree on Software Development",
+      finishYear: 2025,
+      id: 0,
+    },
+    {
+      schoolName: "University of The Odin Project",
+      title: "Degree on Software Development",
+      finishYear: 2025,
+      id: 1,
+    },
+    {
+      schoolName: "University of The Odin Project",
+      title: "Degree on Software Development",
+      finishYear: 2025,
+      id: 2,
+    },
   ]);
   const [editEducationalInformationId, setEditEducationalInformationId] =
-    useState(0);
+    useState(-1);
 
-  const [experience, setExperience] = useState([{ id: 0 }]);
-  const [editExperienceId, setEditExperienceId] = useState(0);
+  const [experience, setExperience] = useState([
+    {
+      companyName: "The Odin Project Co.",
+      positionTitle: "Student",
+      mainResponsabilities:
+        "Reading lessons.\nSolving Projects.\nCompleting Assignments.\nChecking additional resources.",
+      dateFrom: "2024-12-05",
+      dateUntil: "2025-06-20",
+      id: 0,
+    },
+    {
+      companyName: "The Odin Project Co.",
+      positionTitle: "Student",
+      mainResponsabilities:
+        "Reading lessons.\nSolving Projects.\nCompleting Assignments.\nChecking additional resources.",
+      dateFrom: "2024-12-05",
+      dateUntil: "2025-06-20",
+      id: 1,
+    },
+    {
+      companyName: "The Odin Project Co.",
+      positionTitle: "Student",
+      mainResponsabilities:
+        "Reading lessons.\nSolving Projects.\nCompleting Assignments.\nChecking additional resources.",
+      dateFrom: "2024-12-05",
+      dateUntil: "2025-06-20",
+      id: 2,
+    },
+  ]);
+  const [editExperienceId, setEditExperienceId] = useState(-1);
 
   function handlePersonalInformationSave(event) {
     const form = event.target.closest("form");
