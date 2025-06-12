@@ -24,7 +24,7 @@ export default function MainContainer() {
     date from and until
   */
 
-  const [editPersonalInformation, setEditPersonalInformation] = useState(true);
+  const [editPersonalInformation, setEditPersonalInformation] = useState(false);
 
   const [personalInformation, setPersonalInformation] = useState({
     name: "John Doe",
