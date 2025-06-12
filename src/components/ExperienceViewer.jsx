@@ -34,7 +34,7 @@ export default function ExperienceViewer({
         </div>
       </div>
       <div className="experience-item main-resposabilities">
-        {experienceInformation.mainResponsabilities.split("\n").map((r) => (
+        {experienceInformation.mainResponsabilities?.split("\n").map((r) => (
           <div>{r}</div>
         ))}
       </div>
