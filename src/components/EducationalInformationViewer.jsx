@@ -1,3 +1,5 @@
+import "../styles/EducationalInformation.css";
+
 export default function EducationalInformationViewer({
   handleEdit,
   handleDelete,

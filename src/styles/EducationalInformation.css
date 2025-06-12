@@ -1,0 +1,35 @@
+.educational-information {
+  padding-left: 2rem;
+}
+
+.school-name {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: rgb(74, 74, 74);
+  position: relative;
+}
+
+.educational-title {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.finish-year {
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-style: italic;
+  color: hsl(234, 50%, 40%);
+}
+
+.school-name::before {
+  content: "";
+  width: 0.4em;
+  height: 0.4em;
+  background-color: hsl(234, 79%, 66%);
+  position: absolute;
+  left: -1rem;
+  border-radius: 50%;
+}
