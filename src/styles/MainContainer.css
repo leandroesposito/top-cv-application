@@ -47,3 +47,8 @@ h2,
 h3 {
   color: hsl(234, 50%, 40%);
 }
+
+.hide-buttons .buttons-container,
+.hide-buttons button {
+  display: none;
+}

@@ -86,6 +86,8 @@ export default function MainContainer() {
   ]);
   const [editExperienceId, setEditExperienceId] = useState(-1);
 
+  const [hideButtons, setHideButtons] = useState(true);
+
   function handlePersonalInformationSave(event) {
     const form = event.target.closest("form");
     const formData = new FormData(form);
@@ -172,9 +174,16 @@ export default function MainContainer() {
     setEditExperienceId(newItemId);
   }
 
+  function handleHideButtons() {
+    setHideButtons(!hideButtons);
+    setEditPersonalInformation(false);
+    setEditEducationalInformationId(-1);
+    setEditExperienceId(-1);
+  }
+
   return (
     <main>
-      <section>
+      <section className={hideButtons === true ? "hide-buttons" : ""}>
         {editPersonalInformation === true ? (
           <PersonalInformationForm
             handleSave={handlePersonalInformationSave}
@@ -187,7 +196,7 @@ export default function MainContainer() {
           />
         )}
       </section>
-      <section>
+      <section className={hideButtons === true ? "hide-buttons" : ""}>
         <h2 className="section-title">Education</h2>
         {educationalInformation.map((eu) =>
           eu.id === editEducationalInformationId ? (
@@ -208,7 +217,7 @@ export default function MainContainer() {
         )}
         <button onClick={handleAddEducation}>Add education</button>
       </section>
-      <section>
+      <section className={hideButtons === true ? "hide-buttons" : ""}>
         <h2 className="section-title">Experience</h2>
         {experience.map((e) =>
           e.id === editExperienceId ? (
@@ -229,6 +238,9 @@ export default function MainContainer() {
         )}
         <button onClick={handleAddExperience}>Add experience</button>
       </section>
+      <button onClick={handleHideButtons}>
+        {hideButtons ? "Show" : "Hide"} buttons
+      </button>
     </main>
   );
 }
